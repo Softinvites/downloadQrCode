@@ -5,8 +5,6 @@ import logger from "morgan";
 import cors from "cors";
 import { connectDB } from "./db";
 import dotenv from "dotenv";
-import AdminRouter from "./routes/adminRoutes";
-import EventRouter from "./routes/eventsRoutes";
 import GuestRouter from "./routes/guestRoutes";
 
 dotenv.config();
@@ -34,8 +32,6 @@ app.use(logger("dev"));
 app.use(cors(corsOptions)); // Apply CORS middleware
 
 // Routes
-app.use("/admin", AdminRouter);
-app.use("/events", EventRouter);
 app.use("/guest", GuestRouter);
 
 // Error handling middleware
