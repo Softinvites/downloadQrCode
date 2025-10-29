@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const url: string =
-  process.env.MONGODB_URL || "mongodb://localhost:27017/softinvites";
+  process.env.MONGODB_URL || "mongodb+srv://softinvites:Pi1pZr1yjuIcJ5pL@cluster1.f69gx.mongodb.net/softinvites";
 
 export async function connectDB() {
   try {
