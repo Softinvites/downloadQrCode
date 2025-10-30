@@ -15,7 +15,7 @@ export const downloadQRCode = async (
     const guest = await Guest.findById(id);
 
     if (!guest) {
-      res.status(404).json({ message: "Guest not found" });
+      res.status(404).json({ message: "Guest not found or Invalid" });
       return;
     }
 
@@ -69,6 +69,6 @@ export const downloadQRCode = async (
     res.send(pngBuffer);
   } catch (error) {
     console.error("Error:", error);
-    res.status(500).json({ message: "Error downloading QR code" });
+    res.status(500).json({ message: "Error downloading single QR code" });
   }
 };
